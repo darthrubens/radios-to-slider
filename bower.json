@@ -4,7 +4,8 @@
     "description": "jquery plugin to create a slider using a list of radio buttons",
     "main": [
         "css/radios-to-slider.css",
-        "js/jquery.radios-to-slider.js"
+        "js/jquery.radios-to-slider.js",
+        "js/angular.radio.slider.js"
     ],
     "keywords": [
         "slider",
