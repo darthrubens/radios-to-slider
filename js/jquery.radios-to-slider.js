@@ -1,7 +1,7 @@
 /* 
  * radiosToSlider v0.2.0
  * jquery plugin to create a slider using a list of radio buttons
- * (c)2014 Rubén Torres - rubentdlh@gmail.com
+ * (c)2014 RubÃ©n Torres - rubentdlh@gmail.com
  * Released under the MIT license
  */
 
@@ -122,7 +122,13 @@
 
 			this.bearer.find('.slider-level').click( function(){
 				var radioId = $(this).attr('data-radio');
-				slider.bearer.find('#' + radioId).prop('checked', true);
+				var radioElement = slider.bearer.find('#' + radioId);
+				radioElement.prop('checked', true);
+
+				if (slider.options.onSelect) {
+					slider.options.onSelect(radioElement);
+				}
+
 				slider.setSlider();
 
 			});
@@ -145,9 +151,10 @@
 	}
 
 	$.fn.radiosToSlider.defaults = {
-        size: 'medium',
-        animation: true,
-        fitContainer: true
+		size: 'medium',
+		animation: true,
+		fitContainer: true,
+		onSelect: null
     };
 
 })(jQuery);
