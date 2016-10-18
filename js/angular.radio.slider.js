@@ -9,7 +9,7 @@
             restrict: 'E',
             scope: {
                 ngModel: '=',
-                name: '=',
+                name: '=?',
                 values: '='
             },
             template: '<div>'+
@@ -17,6 +17,10 @@
                 '<label for="{{name}}_{{value}}" ng-repeat-end>{{label}}</label>'+
             '</div>',
             link: function (scope, element) {
+                if (!scope.name) {
+                    scope.name = 'radio_slider_'+(idx++);
+                }
+
                 $timeout(function () {
                     element.find('div').first().radiosToSlider({
                         onSelect: function (radio) {
