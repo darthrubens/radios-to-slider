@@ -32,11 +32,42 @@ jquery plugin to create a slider using a list of radio buttons
 </script>
 ```
 
+###AngularJS Module
+
+```html
+<html ng-app="app">
+<body ng-controller="Controller as vm">
+<radio-slider values="vm.values" ng-model="vm.options"></radio-slider>
+</body>
+</html>
+
+<script>
+angular.module('app', ['rubnetd.radio.slider']).controller('Controller', Controller);
+
+function Controller() {
+	var vm = this;
+	
+	vm.options = 'option4';
+	
+	vm.values = {
+		'option1': '1 years', 
+		'option2': '2 years', 
+		'option3': '3 years', 
+		'option4': '4 years', 
+		'option5': '5+ years'
+	};
+}
+</script>
+```
+
 ###Options
 
 Option	|Values	|Default
 --- | --- | ---
 animation	| true, false	|true
+onSelect	| callback | null
+size	| string | "medium"
+fitContainer	| true, false | true
 
 ###Demo and examples
 [rubentd.com/radios-to-slider](http://rubentd.com/radios-to-slider)
