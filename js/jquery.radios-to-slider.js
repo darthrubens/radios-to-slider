@@ -189,6 +189,11 @@
                 $inputs = $bearer.find('input[type=radio]:not(:disabled)');
 
             $levels.on('click', function() {
+
+                if (slider.options.msgConfirm && !confirm(slider.options.msgConfirm)) {
+                  return;
+                }
+
                 var $this = $(this),
                     val = $this.attr('data-value'),
                     radioId = $this.attr('data-radio'),
@@ -306,7 +311,6 @@
                 getValue: slider.getValue.bind(slider)
             });
         });
-
         return rtn;
     };
 
@@ -315,6 +319,7 @@
         animation: true,
         fitContainer: true,
         isDisable: false,
+        msgConfirm: null,
         onSelect: null
     };
 

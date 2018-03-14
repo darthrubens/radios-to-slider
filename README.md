@@ -51,6 +51,7 @@ onSelect     | callback    | null
 size         | string      | "medium"
 fitContainer | true, false | true
 isDisable    | true, false | false
+msgConfirm   | string      | null
 
 ## API
 
