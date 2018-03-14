@@ -1,6 +1,7 @@
 # Change Log
 
 ## [Unreleased]
+- Add msgConfirm option
 
 ## [0.3.2] - 2016-11-25
 
